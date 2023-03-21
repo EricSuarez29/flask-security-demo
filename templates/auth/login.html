@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% from "_macros.html" import render_field %}
+
+{% block content %}
+<div class="row py-5 justify-content-center">
+    <div class="col-lg-4 py-5">
+        <h2 class="mb-4 text-center">Iniciar Sesión</h2>
+        <form class="contact__form" action="/login" method="POST">
+            {{ render_field(form.email) }}
+            {{ render_field(form.password) }}
+            <div class="text-center mt-5 mb-4">
+                <button type="submit" class="site-btn">Iniciar Sesión</button>
+            </div>
+            <div class="text-center">
+                <a href="{{ url_for('auth.register') }}">Registro</a> 
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
